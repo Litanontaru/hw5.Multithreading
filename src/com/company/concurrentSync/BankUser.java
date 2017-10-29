@@ -1,7 +1,9 @@
 package com.company.concurrentSync;
 
 public class BankUser implements Runnable {
+    //Поле должно быть final
     private Bank bank;
+    //Поле должно быть final
     private int moneyToWithdraw;
 
     public BankUser(Bank bank, int moneyToWithdraw) {

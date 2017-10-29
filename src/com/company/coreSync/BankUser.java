@@ -2,6 +2,7 @@ package com.company.coreSync;
 
 public class BankUser implements Runnable {
     private final Bank bank;
+    //Поле должно быть final
     private int moneyToWithdraw;
 
     public BankUser(Bank bank, int moneyToWithdraw) {
@@ -15,6 +16,7 @@ public class BankUser implements Runnable {
             synchronized (bank) {
                 if (bank.hasMoney(moneyToWithdraw)) {
                     bank.getMoney(moneyToWithdraw);
+                    //нарушение JCC - несколько операторов в одной строке + нужно добавить {}
                 } else return;
             }
         }

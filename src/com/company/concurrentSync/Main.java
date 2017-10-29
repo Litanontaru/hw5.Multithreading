@@ -13,5 +13,6 @@ public class Main {
             BankUser user = new BankUser(bank, 10);
             executor.execute(user);
         }
+        //нужно закрыть executor - java.util.concurrent.ExecutorService.shutdown()
     }
 }
